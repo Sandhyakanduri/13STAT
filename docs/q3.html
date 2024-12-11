@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>STAT Final Project - QUESTION3</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="site_libs/plotly-binding-4.10.4/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+<script src="site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">STAT Final Project</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">QUESTION1</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./q2.html"> 
+<span class="menu-text">QUESTION2</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./q3.html" aria-current="page"> 
+<span class="menu-text">QUESTION3</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./contact.html"> 
+<span class="menu-text">Contact</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/your-repo-name"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#code-file-for-3rd-research-question" id="toc-code-file-for-3rd-research-question" class="nav-link active" data-scroll-target="#code-file-for-3rd-research-question">code file for 3rd research question</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">QUESTION3</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="code-file-for-3rd-research-question" class="level2">
+<h2 class="anchored" data-anchor-id="code-file-for-3rd-research-question">code file for 3rd research question</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set CRAN mirror</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">CRAN =</span> <span class="st">"https://cloud.r-project.org"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(caret)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: ggplot2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: lattice</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'plotly'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:ggplot2':
+
+    last_plot</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:stats':
+
+    filter</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:graphics':
+
+    layout</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'MASS'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:plotly':
+
+    select</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:dplyr':
+
+    select</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load your dataset</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>NYPD <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"/Users/sandhyakanduri/Desktop/semester 1/ STAT515/final project stat/Cleaned_NYPD_Arrest_Data_With_Standardized_Date.csv"</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspect the column names and first few rows to understand the structure</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(NYPD)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "ARREST_KEY"               "ARREST_DATE"             
+ [3] "PD_CD"                    "PD_DESC"                 
+ [5] "KY_CD"                    "OFNS_DESC"               
+ [7] "LAW_CODE"                 "LAW_CAT_CD"              
+ [9] "ARREST_BORO"              "ARREST_PRECINCT"         
+[11] "JURISDICTION_CODE"        "AGE_GROUP"               
+[13] "PERP_SEX"                 "PERP_RACE"               
+[15] "X_COORD_CD"               "Y_COORD_CD"              
+[17] "Latitude"                 "Longitude"               
+[19] "New.Georeferenced.Column"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(NYPD)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  ARREST_KEY ARREST_DATE PD_CD                  PD_DESC KY_CD      OFNS_DESC
+1  281240883  2024-01-28   105        STRANGULATION 1ST   106 FELONY ASSAULT
+2  282884120  2024-02-27   263              ARSON 2,3,4   114          ARSON
+3  283137868  2024-03-03   109 ASSAULT 2,1,UNCLASSIFIED   106 FELONY ASSAULT
+4  287001362  2024-05-16   109 ASSAULT 2,1,UNCLASSIFIED   106 FELONY ASSAULT
+5  287829614  2024-06-02   105        STRANGULATION 1ST   106 FELONY ASSAULT
+6  280513565  2024-01-14   153                   RAPE 3   104           RAPE
+    LAW_CODE LAW_CAT_CD ARREST_BORO ARREST_PRECINCT JURISDICTION_CODE AGE_GROUP
+1 PL 1211200          F           Q             105                 0     25-44
+2 PL 1501001          F           Q             107                71     45-64
+3 PL 1200502          F           B              48                 0     25-44
+4 PL 1200512          F           S             121                 0     25-44
+5 PL 1211200          F           Q             100                 0     25-44
+6 PL 1302503          F           M              14                 0     18-24
+  PERP_SEX PERP_RACE X_COORD_CD Y_COORD_CD Latitude Longitude
+1        M     WHITE    1057545     207911 40.73704 -73.73551
+2        M     WHITE    1037489     206343 40.73288 -73.80790
+3        M     BLACK    1013900     250835 40.85511 -73.89282
+4        M     WHITE     938928     168468 40.62897 -74.16327
+5        M     BLACK    1039777     155013 40.59198 -73.80007
+6        M     BLACK     985764     213806 40.75353 -73.99454
+                    New.Georeferenced.Column
+1               POINT (-73.735514 40.737043)
+2               POINT (-73.807899 40.732881)
+3               POINT (-73.892818 40.855109)
+4               POINT (-74.163275 40.628967)
+5                POINT (-73.800066 40.59198)
+6 POINT (-73.9945368920152 40.7535327012632)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the distribution of offense types</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(NYPD<span class="sc">$</span>OFNS_DESC)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+                          (null)              ADMINISTRATIVE CODE 
+                              26                              131 
+            ADMINISTRATIVE CODES   ALCOHOLIC BEVERAGE CONTROL LAW 
+                               2                              122 
+           ANTICIPATORY OFFENSES                            ARSON 
+                              33                               93 
+    ASSAULT 3 &amp; RELATED OFFENSES                  BURGLAR'S TOOLS 
+                           28892                              550 
+                        BURGLARY        CANNABIS RELATED OFFENSES 
+                            4777                              317 
+ CHILD ABANDONMENT/NON SUPPORT 1   CRIMINAL MISCHIEF &amp; RELATED OF 
+                              65                             8955 
+               CRIMINAL TRESPASS                  DANGEROUS DRUGS 
+                            2034                            13731 
+               DANGEROUS WEAPONS               DISORDERLY CONDUCT 
+                            8287                              364 
+  DISRUPTION OF A RELIGIOUS SERV                         ESCAPE 3 
+                               6                                9 
+                  FELONY ASSAULT            FOR OTHER AUTHORITIES 
+                           17219                             1109 
+                         FORGERY                  FORTUNE TELLING 
+                            3739                                1 
+                          FRAUDS             FRAUDULENT ACCOSTING 
+                             743                               43 
+                        GAMBLING                    GRAND LARCENY 
+                             257                             9099 
+  GRAND LARCENY OF MOTOR VEHICLE                    HARRASSMENT 2 
+                            1642                               81 
+      HOMICIDE-NEGLIGENT-VEHICLE   HOMICIDE-NEGLIGENT,UNCLASSIFIE 
+                               6                               51 
+  INTOXICATED &amp; IMPAIRED DRIVING     INTOXICATED/IMPAIRED DRIVING 
+                            1971                              199 
+                        JOSTLING    KIDNAPPING &amp; RELATED OFFENSES 
+                              88                               93 
+                       LOITERING   LOITERING/GAMBLING (CARDS, DIC 
+                               2                                3 
+         MISCELLANEOUS PENAL LAW               MOVING INFRACTIONS 
+                           12433                               43 
+  MURDER &amp; NON-NEGL. MANSLAUGHTE    OFF. AGNST PUB ORD SENSBLTY &amp; 
+                            1190                             3284 
+  OFFENSES AGAINST PUBLIC ADMINI   OFFENSES AGAINST PUBLIC SAFETY 
+                            6705                              230 
+     OFFENSES AGAINST THE PERSON         OFFENSES INVOLVING FRAUD 
+                            1305                             3599 
+    OFFENSES RELATED TO CHILDREN  OTHER OFFENSES RELATED TO THEFT 
+                              65                             8641 
+                OTHER STATE LAWS OTHER STATE LAWS (NON PENAL LAW) 
+                            2761                              341 
+        OTHER TRAFFIC INFRACTION                 PARKING OFFENSES 
+                            1781                                2 
+                   PETIT LARCENY    POSSESSION OF STOLEN PROPERTY 
+                           19904                             3097 
+ PROSTITUTION &amp; RELATED OFFENSES                             RAPE 
+                             246                              571 
+                         ROBBERY                       SEX CRIMES 
+                            9156                             4612 
+                     THEFT-FRAUD    UNAUTHORIZED USE OF A VEHICLE 
+                             155                              437 
+        VEHICLE AND TRAFFIC LAWS 
+                           10149 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a binary target variable for "ASSAULT 3 &amp; RELATED OFFENSES"</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>NYPD <span class="ot">&lt;-</span> NYPD <span class="sc">%&gt;%</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">OFFENSE_BINARY =</span> <span class="fu">ifelse</span>(OFNS_DESC <span class="sc">==</span> <span class="st">"ASSAULT 3 &amp; RELATED OFFENSES"</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">AGE_GROUP =</span> <span class="fu">factor</span>(AGE_GROUP, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"&lt;18"</span>, <span class="st">"18-24"</span>, <span class="st">"25-34"</span>, <span class="st">"35-44"</span>, <span class="st">"45-54"</span>, <span class="st">"55+"</span>)),</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">PERP_RACE =</span> <span class="fu">factor</span>(PERP_RACE),</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">PERP_SEX =</span> <span class="fu">factor</span>(PERP_SEX)</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the distribution of the binary target variable</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(NYPD<span class="sc">$</span>OFFENSE_BINARY)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     0      1 
+166555  28892 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Split the data into training and test sets</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)  <span class="co"># For reproducibility</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>trainIndex <span class="ot">&lt;-</span> <span class="fu">createDataPartition</span>(NYPD<span class="sc">$</span>OFFENSE_BINARY, <span class="at">p =</span> <span class="fl">0.7</span>, <span class="at">list =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>train_data <span class="ot">&lt;-</span> NYPD[trainIndex, ]</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>test_data <span class="ot">&lt;-</span> NYPD[<span class="sc">-</span>trainIndex, ]</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Train a logistic regression model</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">glm</span>(OFFENSE_BINARY <span class="sc">~</span> AGE_GROUP <span class="sc">+</span> PERP_RACE <span class="sc">+</span> PERP_SEX, </span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> train_data, </span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">family =</span> <span class="st">"binomial"</span>)</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary of the logistic regression model</span></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = OFFENSE_BINARY ~ AGE_GROUP + PERP_RACE + PERP_SEX, 
+    family = "binomial", data = train_data)
+
+Coefficients:
+                                  Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)                       -0.69600    0.26392  -2.637  0.00836 ** 
+AGE_GROUP18-24                     0.12530    0.04717   2.656  0.00790 ** 
+PERP_RACEASIAN / PACIFIC ISLANDER -0.42009    0.27078  -1.551  0.12080    
+PERP_RACEBLACK                    -0.46717    0.26089  -1.791  0.07334 .  
+PERP_RACEBLACK HISPANIC           -0.64218    0.26510  -2.422  0.01542 *  
+PERP_RACEUNKNOWN                  -1.04293    0.42270  -2.467  0.01361 *  
+PERP_RACEWHITE                    -0.50646    0.27029  -1.874  0.06096 .  
+PERP_RACEWHITE HISPANIC           -0.34623    0.26149  -1.324  0.18548    
+PERP_SEXM                         -1.04418    0.03773 -27.677  &lt; 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 22740  on 28230  degrees of freedom
+Residual deviance: 21980  on 28222  degrees of freedom
+  (108582 observations deleted due to missingness)
+AIC: 21998
+
+Number of Fisher Scoring iterations: 4</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: Predict probabilities on the test set</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>test_data<span class="sc">$</span>predictions <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, <span class="at">newdata =</span> test_data, <span class="at">type =</span> <span class="st">"response"</span>)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Load your dataset</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>NYPD <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"/Users/sandhyakanduri/Desktop/semester 1/ STAT515/final project stat/Cleaned_NYPD_Arrest_Data_With_Standardized_Date.csv"</span>)</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Linking to GEOS 3.11.0, GDAL 3.5.3, PROJ 9.1.0; sf_use_s2() is TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggmap)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ Google's Terms of Service: &lt;https://mapsplatform.google.com&gt;
+  Stadia Maps' Terms of Service: &lt;https://stadiamaps.com/terms-of-service/&gt;
+  OpenStreetMap's Tile Usage Policy: &lt;https://operations.osmfoundation.org/policies/tiles/&gt;
+ℹ Please cite ggmap if you use it! Use `citation("ggmap")` for details.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'ggmap'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:plotly':
+
+    wind</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to sf object for spatial operations (ensure coordinates are in WGS84)</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>NYPD_sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(NYPD, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"Longitude"</span>, <span class="st">"Latitude"</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Example dataset preparation: Group by age, offense type, race, and gender</span></span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>aggregated_data <span class="ot">&lt;-</span> NYPD <span class="sc">%&gt;%</span></span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(AGE_GROUP, OFNS_DESC, PERP_RACE, PERP_SEX) <span class="sc">%&gt;%</span></span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Arrest_Count =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Define age groups explicitly</span></span>
+<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a>aggregated_data <span class="ot">&lt;-</span> aggregated_data <span class="sc">%&gt;%</span></span>
+<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">Age_Group =</span> <span class="fu">case_when</span>(</span>
+<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a>      AGE_GROUP <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"&lt;18"</span>) <span class="sc">~</span> <span class="st">"&lt;18"</span>,</span>
+<span id="cb34-21"><a href="#cb34-21" aria-hidden="true" tabindex="-1"></a>      AGE_GROUP <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"18-24"</span>) <span class="sc">~</span> <span class="st">"18-24"</span>,</span>
+<span id="cb34-22"><a href="#cb34-22" aria-hidden="true" tabindex="-1"></a>      AGE_GROUP <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"25-34"</span>) <span class="sc">~</span> <span class="st">"25-34"</span>,</span>
+<span id="cb34-23"><a href="#cb34-23" aria-hidden="true" tabindex="-1"></a>      AGE_GROUP <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"35-44"</span>) <span class="sc">~</span> <span class="st">"35-44"</span>,</span>
+<span id="cb34-24"><a href="#cb34-24" aria-hidden="true" tabindex="-1"></a>      AGE_GROUP <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"45-54"</span>) <span class="sc">~</span> <span class="st">"45-54"</span>,</span>
+<span id="cb34-25"><a href="#cb34-25" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"55+"</span></span>
+<span id="cb34-26"><a href="#cb34-26" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb34-27"><a href="#cb34-27" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb34-28"><a href="#cb34-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-29"><a href="#cb34-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter for the top 5 offense types for clarity</span></span>
+<span id="cb34-30"><a href="#cb34-30" aria-hidden="true" tabindex="-1"></a>top_offenses <span class="ot">&lt;-</span> aggregated_data <span class="sc">%&gt;%</span></span>
+<span id="cb34-31"><a href="#cb34-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(OFNS_DESC) <span class="sc">%&gt;%</span></span>
+<span id="cb34-32"><a href="#cb34-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Total_Arrests =</span> <span class="fu">sum</span>(Arrest_Count)) <span class="sc">%&gt;%</span></span>
+<span id="cb34-33"><a href="#cb34-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Total_Arrests)) <span class="sc">%&gt;%</span></span>
+<span id="cb34-34"><a href="#cb34-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb34-35"><a href="#cb34-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(OFNS_DESC)</span>
+<span id="cb34-36"><a href="#cb34-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-37"><a href="#cb34-37" aria-hidden="true" tabindex="-1"></a>filtered_data <span class="ot">&lt;-</span> aggregated_data <span class="sc">%&gt;%</span></span>
+<span id="cb34-38"><a href="#cb34-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(OFNS_DESC <span class="sc">%in%</span> top_offenses)</span>
+<span id="cb34-39"><a href="#cb34-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-40"><a href="#cb34-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Check unique PERP_RACE categories to ensure color mapping matches</span></span>
+<span id="cb34-41"><a href="#cb34-41" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(filtered_data<span class="sc">$</span>PERP_RACE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "AMERICAN INDIAN/ALASKAN NATIVE" "ASIAN / PACIFIC ISLANDER"      
+[3] "BLACK"                          "BLACK HISPANIC"                
+[5] "UNKNOWN"                        "WHITE"                         
+[7] "WHITE HISPANIC"                </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Static ggplot with corrected color mapping</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>static_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(filtered_data, <span class="fu">aes</span>(<span class="at">x =</span> Age_Group, <span class="at">y =</span> Arrest_Count, <span class="at">color =</span> PERP_RACE, <span class="at">group =</span> PERP_RACE)) <span class="sc">+</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(PERP_SEX <span class="sc">~</span> OFNS_DESC, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Rate of Arrests per 1,000 Individuals by Age Group, Race, Gender, and Offense Type"</span>,</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Age Group"</span>,</span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Arrest Count"</span>,</span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Race/Ethnicity"</span></span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(</span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>      <span class="st">"BLACK"</span> <span class="ot">=</span> <span class="st">"green"</span>,</span>
+<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a>      <span class="st">"WHITE"</span> <span class="ot">=</span> <span class="st">"red"</span>,</span>
+<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a>      <span class="st">"BLACK HISPANIC"</span> <span class="ot">=</span> <span class="st">"yellow"</span>,</span>
+<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a>      <span class="st">"ASIAN / PACIFIC ISLANDER"</span> <span class="ot">=</span> <span class="st">"purple"</span>,</span>
+<span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a>      <span class="st">"AMERICAN INDIAN/ALASKAN NATIVE"</span> <span class="ot">=</span> <span class="st">"blue"</span>,</span>
+<span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a>      <span class="st">"WHITE HISPANIC"</span> <span class="ot">=</span> <span class="st">"orange"</span>,</span>
+<span id="cb36-20"><a href="#cb36-20" aria-hidden="true" tabindex="-1"></a>      <span class="st">"UNKNOWN"</span> <span class="ot">=</span> <span class="st">"gray"</span></span>
+<span id="cb36-21"><a href="#cb36-21" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb36-22"><a href="#cb36-22" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb36-23"><a href="#cb36-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb36-24"><a href="#cb36-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb36-25"><a href="#cb36-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb36-26"><a href="#cb36-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
+<span id="cb36-27"><a href="#cb36-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span></span>
+<span id="cb36-28"><a href="#cb36-28" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb36-29"><a href="#cb36-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(</span>
+<span id="cb36-30"><a href="#cb36-30" aria-hidden="true" tabindex="-1"></a>    <span class="st">"text"</span>,</span>
+<span id="cb36-31"><a href="#cb36-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="dv">3</span>, <span class="at">y =</span> <span class="fu">max</span>(filtered_data<span class="sc">$</span>Arrest_Count, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb36-32"><a href="#cb36-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> <span class="st">"Peak Arrest Rate"</span>,</span>
+<span id="cb36-33"><a href="#cb36-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"orange"</span>,</span>
+<span id="cb36-34"><a href="#cb36-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">4</span>,</span>
+<span id="cb36-35"><a href="#cb36-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">fontface =</span> <span class="st">"bold"</span></span>
+<span id="cb36-36"><a href="#cb36-36" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+ℹ Please use `linewidth` instead.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert ggplot to Plotly for interactivity</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>interactive_plot <span class="ot">&lt;-</span> <span class="fu">ggplotly</span>(static_plot)</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the interactive Plotly visualization</span></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>interactive_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-76773f2841ed1bf9a281" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-76773f2841ed1bf9a281">{"x":{"data":[{"x":[1,2,3,3],"y":[2,9,15,6],"text":["Age_Group: <18<br />Arrest_Count:    2<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 18-24<br />Arrest_Count:    9<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:   15<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:    6<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(0,0,255,1)","dash":"solid"},"hoveron":"points","name":"AMERICAN INDIAN/ALASKAN NATIVE","legendgroup":"AMERICAN INDIAN/ALASKAN NATIVE","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2],"y":[1],"text":"Age_Group: 18-24<br />Arrest_Count:    1<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","type":"scatter","mode":"lines+markers","line":{"width":3.7795275590551185,"color":"rgba(0,0,255,1)","dash":"solid"},"hoveron":"points","name":"AMERICAN INDIAN/ALASKAN NATIVE","legendgroup":"AMERICAN INDIAN/ALASKAN NATIVE","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","marker":{"autocolorscale":false,"color":"rgba(0,0,255,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,0,255,1)"}},"frame":null},{"x":[1,2,3,3,3],"y":[2,2,3,3,1],"text":["Age_Group: <18<br />Arrest_Count:    2<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 18-24<br />Arrest_Count:    2<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:    3<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:    3<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:    1<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(0,0,255,1)","dash":"solid"},"hoveron":"points","name":"AMERICAN INDIAN/ALASKAN NATIVE","legendgroup":"AMERICAN INDIAN/ALASKAN NATIVE","showlegend":false,"xaxis":"x3","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,3],"y":[3,6,1],"text":["Age_Group: 18-24<br />Arrest_Count:    3<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:    6<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:    1<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE"],"type":"scatter","mode":"lines+markers","line":{"width":3.7795275590551185,"color":"rgba(0,0,255,1)","dash":"solid"},"hoveron":"points","name":"AMERICAN INDIAN/ALASKAN NATIVE","legendgroup":"AMERICAN INDIAN/ALASKAN NATIVE","showlegend":false,"xaxis":"x4","yaxis":"y","hoverinfo":"text","marker":{"autocolorscale":false,"color":"rgba(0,0,255,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,0,255,1)"}},"frame":null},{"x":[2,3,3],"y":[3,7,4],"text":["Age_Group: 18-24<br />Arrest_Count:    3<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:    7<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:    4<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE"],"type":"scatter","mode":"lines+markers","line":{"width":3.7795275590551185,"color":"rgba(0,0,255,1)","dash":"solid"},"hoveron":"points","name":"AMERICAN INDIAN/ALASKAN NATIVE","legendgroup":"AMERICAN INDIAN/ALASKAN NATIVE","showlegend":false,"xaxis":"x5","yaxis":"y","hoverinfo":"text","marker":{"autocolorscale":false,"color":"rgba(0,0,255,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,0,255,1)"}},"frame":null},{"x":[2,3,3,3],"y":[16,76,32,1],"text":["Age_Group: 18-24<br />Arrest_Count:   16<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:   76<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:   32<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:    1<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE"],"type":"scatter","mode":"lines+markers","line":{"width":3.7795275590551185,"color":"rgba(0,0,255,1)","dash":"solid"},"hoveron":"points","name":"AMERICAN INDIAN/ALASKAN NATIVE","legendgroup":"AMERICAN INDIAN/ALASKAN NATIVE","showlegend":false,"xaxis":"x","yaxis":"y2","hoverinfo":"text","marker":{"autocolorscale":false,"color":"rgba(0,0,255,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,0,255,1)"}},"frame":null},{"x":[2,3,3],"y":[6,12,4],"text":["Age_Group: 18-24<br />Arrest_Count:    6<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:   12<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:    4<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE"],"type":"scatter","mode":"lines+markers","line":{"width":3.7795275590551185,"color":"rgba(0,0,255,1)","dash":"solid"},"hoveron":"points","name":"AMERICAN INDIAN/ALASKAN NATIVE","legendgroup":"AMERICAN INDIAN/ALASKAN NATIVE","showlegend":false,"xaxis":"x2","yaxis":"y2","hoverinfo":"text","marker":{"autocolorscale":false,"color":"rgba(0,0,255,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,0,255,1)"}},"frame":null},{"x":[1,2,3,3,3],"y":[2,4,32,8,3],"text":["Age_Group: <18<br />Arrest_Count:    2<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 18-24<br />Arrest_Count:    4<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:   32<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:    8<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:    3<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(0,0,255,1)","dash":"solid"},"hoveron":"points","name":"AMERICAN INDIAN/ALASKAN NATIVE","legendgroup":"AMERICAN INDIAN/ALASKAN NATIVE","showlegend":false,"xaxis":"x3","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[1,2,3,3],"y":[1,6,20,4],"text":["Age_Group: <18<br />Arrest_Count:    1<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 18-24<br />Arrest_Count:    6<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:   20<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:    4<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(0,0,255,1)","dash":"solid"},"hoveron":"points","name":"AMERICAN INDIAN/ALASKAN NATIVE","legendgroup":"AMERICAN INDIAN/ALASKAN NATIVE","showlegend":false,"xaxis":"x4","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,3],"y":[2,23,5,2],"text":["Age_Group: 18-24<br />Arrest_Count:    2<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:   23<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:    5<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:    2<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE"],"type":"scatter","mode":"lines+markers","line":{"width":3.7795275590551185,"color":"rgba(0,0,255,1)","dash":"solid"},"hoveron":"points","name":"AMERICAN INDIAN/ALASKAN NATIVE","legendgroup":"AMERICAN INDIAN/ALASKAN NATIVE","showlegend":false,"xaxis":"x5","yaxis":"y2","hoverinfo":"text","marker":{"autocolorscale":false,"color":"rgba(0,0,255,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,0,255,1)"}},"frame":null},{"x":[1,2,3,3,3],"y":[11,59,219,98,23],"text":["Age_Group: <18<br />Arrest_Count:   11<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 18-24<br />Arrest_Count:   59<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:  219<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:   98<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:   23<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(160,32,240,1)","dash":"solid"},"hoveron":"points","name":"ASIAN / PACIFIC ISLANDER","legendgroup":"ASIAN / PACIFIC ISLANDER","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,3,3],"y":[14,34,13,1],"text":["Age_Group: 18-24<br />Arrest_Count:   14<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:   34<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:   13<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:    1<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER"],"type":"scatter","mode":"lines+markers","line":{"width":3.7795275590551185,"color":"rgba(160,32,240,1)","dash":"solid"},"hoveron":"points","name":"ASIAN / PACIFIC ISLANDER","legendgroup":"ASIAN / PACIFIC ISLANDER","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","marker":{"autocolorscale":false,"color":"rgba(160,32,240,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(160,32,240,1)"}},"frame":null},{"x":[1,2,3,3,3],"y":[6,41,126,69,16],"text":["Age_Group: <18<br />Arrest_Count:    6<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 18-24<br />Arrest_Count:   41<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:  126<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:   69<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:   16<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(160,32,240,1)","dash":"solid"},"hoveron":"points","name":"ASIAN / PACIFIC ISLANDER","legendgroup":"ASIAN / PACIFIC ISLANDER","showlegend":false,"xaxis":"x3","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[1,10,48,35,10],"text":["Age_Group: <18<br />Arrest_Count:    1<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 18-24<br />Arrest_Count:   10<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:   48<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:   35<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:   10<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(160,32,240,1)","dash":"solid"},"hoveron":"points","name":"ASIAN / PACIFIC ISLANDER","legendgroup":"ASIAN / PACIFIC ISLANDER","showlegend":false,"xaxis":"x4","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,3,3],"y":[54,114,90,10],"text":["Age_Group: 18-24<br />Arrest_Count:   54<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:  114<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:   90<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:   10<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER"],"type":"scatter","mode":"lines+markers","line":{"width":3.7795275590551185,"color":"rgba(160,32,240,1)","dash":"solid"},"hoveron":"points","name":"ASIAN / PACIFIC ISLANDER","legendgroup":"ASIAN / PACIFIC ISLANDER","showlegend":false,"xaxis":"x5","yaxis":"y","hoverinfo":"text","marker":{"autocolorscale":false,"color":"rgba(160,32,240,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(160,32,240,1)"}},"frame":null},{"x":[1,2,3,3,3],"y":[33,183,865,451,87],"text":["Age_Group: <18<br />Arrest_Count:   33<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 18-24<br />Arrest_Count:  183<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:  865<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:  451<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:   87<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(160,32,240,1)","dash":"solid"},"hoveron":"points","name":"ASIAN / PACIFIC ISLANDER","legendgroup":"ASIAN / PACIFIC ISLANDER","showlegend":false,"xaxis":"x","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,3],"y":[94,410,96,2],"text":["Age_Group: 18-24<br />Arrest_Count:   94<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:  410<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:   96<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:    2<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER"],"type":"scatter","mode":"lines+markers","line":{"width":3.7795275590551185,"color":"rgba(160,32,240,1)","dash":"solid"},"hoveron":"points","name":"ASIAN / PACIFIC ISLANDER","legendgroup":"ASIAN / PACIFIC ISLANDER","showlegend":false,"xaxis":"x2","yaxis":"y2","hoverinfo":"text","marker":{"autocolorscale":false,"color":"rgba(160,32,240,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(160,32,240,1)"}},"frame":null},{"x":[1,2,3,3,3],"y":[45,128,502,248,39],"text":["Age_Group: <18<br />Arrest_Count:   45<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 18-24<br />Arrest_Count:  128<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:  502<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:  248<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:   39<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(160,32,240,1)","dash":"solid"},"hoveron":"points","name":"ASIAN / PACIFIC ISLANDER","legendgroup":"ASIAN / PACIFIC ISLANDER","showlegend":false,"xaxis":"x3","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[12,103,502,178,29],"text":["Age_Group: <18<br />Arrest_Count:   12<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 18-24<br />Arrest_Count:  103<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:  502<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:  178<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:   29<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(160,32,240,1)","dash":"solid"},"hoveron":"points","name":"ASIAN / PACIFIC ISLANDER","legendgroup":"ASIAN / PACIFIC ISLANDER","showlegend":false,"xaxis":"x4","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[3,66,394,115,14],"text":["Age_Group: <18<br />Arrest_Count:    3<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 18-24<br />Arrest_Count:   66<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:  394<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:  115<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:   14<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(160,32,240,1)","dash":"solid"},"hoveron":"points","name":"ASIAN / PACIFIC ISLANDER","legendgroup":"ASIAN / PACIFIC ISLANDER","showlegend":false,"xaxis":"x5","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[201,810,2264,689,71],"text":["Age_Group: <18<br />Arrest_Count:  201<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 18-24<br />Arrest_Count:  810<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count: 2264<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:  689<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:   71<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(0,255,0,1)","dash":"solid"},"hoveron":"points","name":"BLACK","legendgroup":"BLACK","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[3,50,363,238,17],"text":["Age_Group: <18<br />Arrest_Count:    3<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 18-24<br />Arrest_Count:   50<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:  363<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:  238<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:   17<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(0,255,0,1)","dash":"solid"},"hoveron":"points","name":"BLACK","legendgroup":"BLACK","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[153,413,1363,418,38],"text":["Age_Group: <18<br />Arrest_Count:  153<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 18-24<br />Arrest_Count:  413<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count: 1363<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:  418<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:   38<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(0,255,0,1)","dash":"solid"},"hoveron":"points","name":"BLACK","legendgroup":"BLACK","showlegend":false,"xaxis":"x3","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[9,144,659,162,12],"text":["Age_Group: <18<br />Arrest_Count:    9<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 18-24<br />Arrest_Count:  144<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:  659<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:  162<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:   12<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(0,255,0,1)","dash":"solid"},"hoveron":"points","name":"BLACK","legendgroup":"BLACK","showlegend":false,"xaxis":"x4","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[26,294,1015,458,43],"text":["Age_Group: <18<br />Arrest_Count:   26<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 18-24<br />Arrest_Count:  294<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count: 1015<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:  458<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:   43<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(0,255,0,1)","dash":"solid"},"hoveron":"points","name":"BLACK","legendgroup":"BLACK","showlegend":false,"xaxis":"x5","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[269,1281,5466,1802,249],"text":["Age_Group: <18<br />Arrest_Count:  269<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 18-24<br />Arrest_Count: 1281<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count: 5466<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count: 1802<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:  249<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(0,255,0,1)","dash":"solid"},"hoveron":"points","name":"BLACK","legendgroup":"BLACK","showlegend":false,"xaxis":"x","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[73,548,2887,1954,209],"text":["Age_Group: <18<br />Arrest_Count:   73<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 18-24<br />Arrest_Count:  548<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count: 2887<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count: 1954<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:  209<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(0,255,0,1)","dash":"solid"},"hoveron":"points","name":"BLACK","legendgroup":"BLACK","showlegend":false,"xaxis":"x2","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[274,813,3518,1018,126],"text":["Age_Group: <18<br />Arrest_Count:  274<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 18-24<br />Arrest_Count:  813<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count: 3518<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count: 1018<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:  126<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(0,255,0,1)","dash":"solid"},"hoveron":"points","name":"BLACK","legendgroup":"BLACK","showlegend":false,"xaxis":"x3","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[61,729,3099,1063,93],"text":["Age_Group: <18<br />Arrest_Count:   61<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 18-24<br />Arrest_Count:  729<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count: 3099<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count: 1063<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:   93<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(0,255,0,1)","dash":"solid"},"hoveron":"points","name":"BLACK","legendgroup":"BLACK","showlegend":false,"xaxis":"x4","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[104,517,3220,2320,185],"text":["Age_Group: <18<br />Arrest_Count:  104<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 18-24<br />Arrest_Count:  517<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count: 3220<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count: 2320<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:  185<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(0,255,0,1)","dash":"solid"},"hoveron":"points","name":"BLACK","legendgroup":"BLACK","showlegend":false,"xaxis":"x5","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[44,149,396,92,5],"text":["Age_Group: <18<br />Arrest_Count:   44<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 18-24<br />Arrest_Count:  149<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:  396<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:   92<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:    5<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,255,0,1)","dash":"solid"},"hoveron":"points","name":"BLACK HISPANIC","legendgroup":"BLACK HISPANIC","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[1,6,65,29,4],"text":["Age_Group: <18<br />Arrest_Count:    1<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 18-24<br />Arrest_Count:    6<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:   65<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:   29<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:    4<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,255,0,1)","dash":"solid"},"hoveron":"points","name":"BLACK HISPANIC","legendgroup":"BLACK HISPANIC","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[31,91,256,64,5],"text":["Age_Group: <18<br />Arrest_Count:   31<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 18-24<br />Arrest_Count:   91<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:  256<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:   64<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:    5<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,255,0,1)","dash":"solid"},"hoveron":"points","name":"BLACK HISPANIC","legendgroup":"BLACK HISPANIC","showlegend":false,"xaxis":"x3","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,3],"y":[1,26,71,15],"text":["Age_Group: <18<br />Arrest_Count:    1<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 18-24<br />Arrest_Count:   26<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:   71<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:   15<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,255,0,1)","dash":"solid"},"hoveron":"points","name":"BLACK HISPANIC","legendgroup":"BLACK HISPANIC","showlegend":false,"xaxis":"x4","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[6,79,306,62,3],"text":["Age_Group: <18<br />Arrest_Count:    6<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 18-24<br />Arrest_Count:   79<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:  306<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:   62<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:    3<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,255,0,1)","dash":"solid"},"hoveron":"points","name":"BLACK HISPANIC","legendgroup":"BLACK HISPANIC","showlegend":false,"xaxis":"x5","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[69,297,1258,304,31],"text":["Age_Group: <18<br />Arrest_Count:   69<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 18-24<br />Arrest_Count:  297<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count: 1258<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:  304<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:   31<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,255,0,1)","dash":"solid"},"hoveron":"points","name":"BLACK HISPANIC","legendgroup":"BLACK HISPANIC","showlegend":false,"xaxis":"x","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[13,184,717,326,38],"text":["Age_Group: <18<br />Arrest_Count:   13<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 18-24<br />Arrest_Count:  184<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:  717<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:  326<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:   38<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,255,0,1)","dash":"solid"},"hoveron":"points","name":"BLACK HISPANIC","legendgroup":"BLACK HISPANIC","showlegend":false,"xaxis":"x2","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[61,218,783,169,26],"text":["Age_Group: <18<br />Arrest_Count:   61<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 18-24<br />Arrest_Count:  218<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:  783<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:  169<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:   26<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,255,0,1)","dash":"solid"},"hoveron":"points","name":"BLACK HISPANIC","legendgroup":"BLACK HISPANIC","showlegend":false,"xaxis":"x3","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[18,199,634,106,5],"text":["Age_Group: <18<br />Arrest_Count:   18<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 18-24<br />Arrest_Count:  199<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:  634<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:  106<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:    5<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,255,0,1)","dash":"solid"},"hoveron":"points","name":"BLACK HISPANIC","legendgroup":"BLACK HISPANIC","showlegend":false,"xaxis":"x4","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[10,248,716,343,18],"text":["Age_Group: <18<br />Arrest_Count:   10<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 18-24<br />Arrest_Count:  248<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:  716<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:  343<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:   18<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,255,0,1)","dash":"solid"},"hoveron":"points","name":"BLACK HISPANIC","legendgroup":"BLACK HISPANIC","showlegend":false,"xaxis":"x5","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3],"y":[5,12,6],"text":["Age_Group: 18-24<br />Arrest_Count:    5<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 55+<br />Arrest_Count:   12<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 55+<br />Arrest_Count:    6<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN"],"type":"scatter","mode":"lines+markers","line":{"width":3.7795275590551185,"color":"rgba(190,190,190,1)","dash":"solid"},"hoveron":"points","name":"UNKNOWN","legendgroup":"UNKNOWN","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","marker":{"autocolorscale":false,"color":"rgba(190,190,190,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(190,190,190,1)"}},"frame":null},{"x":[3],"y":[1],"text":"Age_Group: 55+<br />Arrest_Count:    1<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","type":"scatter","mode":"lines+markers","line":{"width":3.7795275590551185,"color":"rgba(190,190,190,1)","dash":"solid"},"hoveron":"points","name":"UNKNOWN","legendgroup":"UNKNOWN","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","marker":{"autocolorscale":false,"color":"rgba(190,190,190,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(190,190,190,1)"}},"frame":null},{"x":[2,3,3],"y":[3,11,3],"text":["Age_Group: 18-24<br />Arrest_Count:    3<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 55+<br />Arrest_Count:   11<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 55+<br />Arrest_Count:    3<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN"],"type":"scatter","mode":"lines+markers","line":{"width":3.7795275590551185,"color":"rgba(190,190,190,1)","dash":"solid"},"hoveron":"points","name":"UNKNOWN","legendgroup":"UNKNOWN","showlegend":false,"xaxis":"x3","yaxis":"y","hoverinfo":"text","marker":{"autocolorscale":false,"color":"rgba(190,190,190,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(190,190,190,1)"}},"frame":null},{"x":[2,3],"y":[3,3],"text":["Age_Group: 18-24<br />Arrest_Count:    3<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 55+<br />Arrest_Count:    3<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN"],"type":"scatter","mode":"lines+markers","line":{"width":3.7795275590551185,"color":"rgba(190,190,190,1)","dash":"solid"},"hoveron":"points","name":"UNKNOWN","legendgroup":"UNKNOWN","showlegend":false,"xaxis":"x4","yaxis":"y","hoverinfo":"text","marker":{"autocolorscale":false,"color":"rgba(190,190,190,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(190,190,190,1)"}},"frame":null},{"x":[2,3,3,3],"y":[6,12,7,1],"text":["Age_Group: 18-24<br />Arrest_Count:    6<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 55+<br />Arrest_Count:   12<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 55+<br />Arrest_Count:    7<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 55+<br />Arrest_Count:    1<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN"],"type":"scatter","mode":"lines+markers","line":{"width":3.7795275590551185,"color":"rgba(190,190,190,1)","dash":"solid"},"hoveron":"points","name":"UNKNOWN","legendgroup":"UNKNOWN","showlegend":false,"xaxis":"x5","yaxis":"y","hoverinfo":"text","marker":{"autocolorscale":false,"color":"rgba(190,190,190,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(190,190,190,1)"}},"frame":null},{"x":[2,3,3,3],"y":[11,47,12,4],"text":["Age_Group: 18-24<br />Arrest_Count:   11<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 55+<br />Arrest_Count:   47<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 55+<br />Arrest_Count:   12<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 55+<br />Arrest_Count:    4<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN"],"type":"scatter","mode":"lines+markers","line":{"width":3.7795275590551185,"color":"rgba(190,190,190,1)","dash":"solid"},"hoveron":"points","name":"UNKNOWN","legendgroup":"UNKNOWN","showlegend":false,"xaxis":"x","yaxis":"y2","hoverinfo":"text","marker":{"autocolorscale":false,"color":"rgba(190,190,190,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(190,190,190,1)"}},"frame":null},{"x":[1,2,3,3,3],"y":[1,3,21,3,1],"text":["Age_Group: <18<br />Arrest_Count:    1<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 18-24<br />Arrest_Count:    3<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 55+<br />Arrest_Count:   21<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 55+<br />Arrest_Count:    3<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 55+<br />Arrest_Count:    1<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(190,190,190,1)","dash":"solid"},"hoveron":"points","name":"UNKNOWN","legendgroup":"UNKNOWN","showlegend":false,"xaxis":"x2","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[1,2,3,3],"y":[2,8,21,12],"text":["Age_Group: <18<br />Arrest_Count:    2<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 18-24<br />Arrest_Count:    8<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 55+<br />Arrest_Count:   21<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 55+<br />Arrest_Count:   12<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(190,190,190,1)","dash":"solid"},"hoveron":"points","name":"UNKNOWN","legendgroup":"UNKNOWN","showlegend":false,"xaxis":"x3","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3],"y":[7,13,9],"text":["Age_Group: 18-24<br />Arrest_Count:    7<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 55+<br />Arrest_Count:   13<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 55+<br />Arrest_Count:    9<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN"],"type":"scatter","mode":"lines+markers","line":{"width":3.7795275590551185,"color":"rgba(190,190,190,1)","dash":"solid"},"hoveron":"points","name":"UNKNOWN","legendgroup":"UNKNOWN","showlegend":false,"xaxis":"x4","yaxis":"y2","hoverinfo":"text","marker":{"autocolorscale":false,"color":"rgba(190,190,190,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(190,190,190,1)"}},"frame":null},{"x":[1,2,3,3,3],"y":[1,8,26,24,2],"text":["Age_Group: <18<br />Arrest_Count:    1<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 18-24<br />Arrest_Count:    8<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 55+<br />Arrest_Count:   26<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 55+<br />Arrest_Count:   24<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 55+<br />Arrest_Count:    2<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(190,190,190,1)","dash":"solid"},"hoveron":"points","name":"UNKNOWN","legendgroup":"UNKNOWN","showlegend":false,"xaxis":"x5","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[14,75,304,136,19],"text":["Age_Group: <18<br />Arrest_Count:   14<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 18-24<br />Arrest_Count:   75<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  304<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  136<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:   19<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,0,0,1)","dash":"solid"},"hoveron":"points","name":"WHITE","legendgroup":"WHITE","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[2,25,375,105,2],"text":["Age_Group: <18<br />Arrest_Count:    2<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 18-24<br />Arrest_Count:   25<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  375<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  105<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:    2<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,0,0,1)","dash":"solid"},"hoveron":"points","name":"WHITE","legendgroup":"WHITE","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[8,34,198,94,16],"text":["Age_Group: <18<br />Arrest_Count:    8<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 18-24<br />Arrest_Count:   34<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  198<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:   94<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:   16<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,0,0,1)","dash":"solid"},"hoveron":"points","name":"WHITE","legendgroup":"WHITE","showlegend":false,"xaxis":"x3","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,3,3],"y":[11,144,63,5],"text":["Age_Group: 18-24<br />Arrest_Count:   11<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  144<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:   63<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:    5<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE"],"type":"scatter","mode":"lines+markers","line":{"width":3.7795275590551185,"color":"rgba(255,0,0,1)","dash":"solid"},"hoveron":"points","name":"WHITE","legendgroup":"WHITE","showlegend":false,"xaxis":"x4","yaxis":"y","hoverinfo":"text","marker":{"autocolorscale":false,"color":"rgba(255,0,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,0,0,1)"}},"frame":null},{"x":[1,2,3,3,3],"y":[2,93,634,289,35],"text":["Age_Group: <18<br />Arrest_Count:    2<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 18-24<br />Arrest_Count:   93<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  634<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  289<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:   35<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,0,0,1)","dash":"solid"},"hoveron":"points","name":"WHITE","legendgroup":"WHITE","showlegend":false,"xaxis":"x5","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[32,184,1028,594,134],"text":["Age_Group: <18<br />Arrest_Count:   32<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 18-24<br />Arrest_Count:  184<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count: 1028<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  594<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  134<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,0,0,1)","dash":"solid"},"hoveron":"points","name":"WHITE","legendgroup":"WHITE","showlegend":false,"xaxis":"x","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[5,55,842,388,25],"text":["Age_Group: <18<br />Arrest_Count:    5<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 18-24<br />Arrest_Count:   55<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  842<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  388<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:   25<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,0,0,1)","dash":"solid"},"hoveron":"points","name":"WHITE","legendgroup":"WHITE","showlegend":false,"xaxis":"x2","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[31,98,519,284,50],"text":["Age_Group: <18<br />Arrest_Count:   31<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 18-24<br />Arrest_Count:   98<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  519<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  284<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:   50<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,0,0,1)","dash":"solid"},"hoveron":"points","name":"WHITE","legendgroup":"WHITE","showlegend":false,"xaxis":"x3","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[8,80,649,438,60],"text":["Age_Group: <18<br />Arrest_Count:    8<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 18-24<br />Arrest_Count:   80<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  649<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  438<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:   60<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,0,0,1)","dash":"solid"},"hoveron":"points","name":"WHITE","legendgroup":"WHITE","showlegend":false,"xaxis":"x4","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[5,91,1388,634,64],"text":["Age_Group: <18<br />Arrest_Count:    5<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 18-24<br />Arrest_Count:   91<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count: 1388<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  634<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:   64<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,0,0,1)","dash":"solid"},"hoveron":"points","name":"WHITE","legendgroup":"WHITE","showlegend":false,"xaxis":"x5","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[97,488,1412,302,15],"text":["Age_Group: <18<br />Arrest_Count:   97<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 18-24<br />Arrest_Count:  488<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count: 1412<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:  302<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:   15<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,165,0,1)","dash":"solid"},"hoveron":"points","name":"WHITE HISPANIC","legendgroup":"WHITE HISPANIC","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[2,31,243,118,2],"text":["Age_Group: <18<br />Arrest_Count:    2<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 18-24<br />Arrest_Count:   31<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:  243<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:  118<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:    2<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,165,0,1)","dash":"solid"},"hoveron":"points","name":"WHITE HISPANIC","legendgroup":"WHITE HISPANIC","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[74,215,794,193,18],"text":["Age_Group: <18<br />Arrest_Count:   74<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 18-24<br />Arrest_Count:  215<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:  794<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:  193<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:   18<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,165,0,1)","dash":"solid"},"hoveron":"points","name":"WHITE HISPANIC","legendgroup":"WHITE HISPANIC","showlegend":false,"xaxis":"x3","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[7,45,252,48,9],"text":["Age_Group: <18<br />Arrest_Count:    7<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 18-24<br />Arrest_Count:   45<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:  252<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:   48<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:    9<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,165,0,1)","dash":"solid"},"hoveron":"points","name":"WHITE HISPANIC","legendgroup":"WHITE HISPANIC","showlegend":false,"xaxis":"x4","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[9,296,836,255,27],"text":["Age_Group: <18<br />Arrest_Count:    9<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 18-24<br />Arrest_Count:  296<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:  836<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:  255<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:   27<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,165,0,1)","dash":"solid"},"hoveron":"points","name":"WHITE HISPANIC","legendgroup":"WHITE HISPANIC","showlegend":false,"xaxis":"x5","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[128,1040,3808,958,94],"text":["Age_Group: <18<br />Arrest_Count:  128<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 18-24<br />Arrest_Count: 1040<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count: 3808<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:  958<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:   94<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,165,0,1)","dash":"solid"},"hoveron":"points","name":"WHITE HISPANIC","legendgroup":"WHITE HISPANIC","showlegend":false,"xaxis":"x","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[21,328,1734,921,65],"text":["Age_Group: <18<br />Arrest_Count:   21<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 18-24<br />Arrest_Count:  328<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count: 1734<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:  921<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:   65<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,165,0,1)","dash":"solid"},"hoveron":"points","name":"WHITE HISPANIC","legendgroup":"WHITE HISPANIC","showlegend":false,"xaxis":"x2","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[166,594,2106,498,51],"text":["Age_Group: <18<br />Arrest_Count:  166<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 18-24<br />Arrest_Count:  594<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count: 2106<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:  498<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:   51<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,165,0,1)","dash":"solid"},"hoveron":"points","name":"WHITE HISPANIC","legendgroup":"WHITE HISPANIC","showlegend":false,"xaxis":"x3","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[42,414,1595,416,37],"text":["Age_Group: <18<br />Arrest_Count:   42<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 18-24<br />Arrest_Count:  414<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count: 1595<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:  416<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:   37<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,165,0,1)","dash":"solid"},"hoveron":"points","name":"WHITE HISPANIC","legendgroup":"WHITE HISPANIC","showlegend":false,"xaxis":"x4","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[1,2,3,3,3],"y":[18,783,2492,945,42],"text":["Age_Group: <18<br />Arrest_Count:   18<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 18-24<br />Arrest_Count:  783<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count: 2492<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:  945<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:   42<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,165,0,1)","dash":"solid"},"hoveron":"points","name":"WHITE HISPANIC","legendgroup":"WHITE HISPANIC","showlegend":false,"xaxis":"x5","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,1],"y":[9,15,6,2],"text":["Age_Group: 18-24<br />Arrest_Count:    9<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:   15<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:    6<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: <18<br />Arrest_Count:    2<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,0,255,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,0,255,1)"}},"hoveron":"points","name":"AMERICAN INDIAN/ALASKAN NATIVE","legendgroup":"AMERICAN INDIAN/ALASKAN NATIVE","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[2,3,3,1,2],"text":["Age_Group: 18-24<br />Arrest_Count:    2<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:    3<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:    3<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:    1<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: <18<br />Arrest_Count:    2<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,0,255,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,0,255,1)"}},"hoveron":"points","name":"AMERICAN INDIAN/ALASKAN NATIVE","legendgroup":"AMERICAN INDIAN/ALASKAN NATIVE","showlegend":false,"xaxis":"x3","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[4,32,8,3,2],"text":["Age_Group: 18-24<br />Arrest_Count:    4<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:   32<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:    8<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:    3<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: <18<br />Arrest_Count:    2<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,0,255,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,0,255,1)"}},"hoveron":"points","name":"AMERICAN INDIAN/ALASKAN NATIVE","legendgroup":"AMERICAN INDIAN/ALASKAN NATIVE","showlegend":false,"xaxis":"x3","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,1],"y":[6,20,4,1],"text":["Age_Group: 18-24<br />Arrest_Count:    6<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:   20<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: 55+<br />Arrest_Count:    4<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE","Age_Group: <18<br />Arrest_Count:    1<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE<br />PERP_RACE: AMERICAN INDIAN/ALASKAN NATIVE"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,0,255,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,0,255,1)"}},"hoveron":"points","name":"AMERICAN INDIAN/ALASKAN NATIVE","legendgroup":"AMERICAN INDIAN/ALASKAN NATIVE","showlegend":false,"xaxis":"x4","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[59,219,98,23,11],"text":["Age_Group: 18-24<br />Arrest_Count:   59<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:  219<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:   98<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:   23<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: <18<br />Arrest_Count:   11<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(160,32,240,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(160,32,240,1)"}},"hoveron":"points","name":"ASIAN / PACIFIC ISLANDER","legendgroup":"ASIAN / PACIFIC ISLANDER","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[41,126,69,16,6],"text":["Age_Group: 18-24<br />Arrest_Count:   41<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:  126<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:   69<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:   16<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: <18<br />Arrest_Count:    6<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(160,32,240,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(160,32,240,1)"}},"hoveron":"points","name":"ASIAN / PACIFIC ISLANDER","legendgroup":"ASIAN / PACIFIC ISLANDER","showlegend":false,"xaxis":"x3","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[10,48,35,10,1],"text":["Age_Group: 18-24<br />Arrest_Count:   10<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:   48<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:   35<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:   10<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: <18<br />Arrest_Count:    1<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(160,32,240,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(160,32,240,1)"}},"hoveron":"points","name":"ASIAN / PACIFIC ISLANDER","legendgroup":"ASIAN / PACIFIC ISLANDER","showlegend":false,"xaxis":"x4","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[183,865,451,87,33],"text":["Age_Group: 18-24<br />Arrest_Count:  183<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:  865<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:  451<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:   87<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: <18<br />Arrest_Count:   33<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(160,32,240,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(160,32,240,1)"}},"hoveron":"points","name":"ASIAN / PACIFIC ISLANDER","legendgroup":"ASIAN / PACIFIC ISLANDER","showlegend":false,"xaxis":"x","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[128,502,248,39,45],"text":["Age_Group: 18-24<br />Arrest_Count:  128<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:  502<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:  248<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:   39<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: <18<br />Arrest_Count:   45<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(160,32,240,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(160,32,240,1)"}},"hoveron":"points","name":"ASIAN / PACIFIC ISLANDER","legendgroup":"ASIAN / PACIFIC ISLANDER","showlegend":false,"xaxis":"x3","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[103,502,178,29,12],"text":["Age_Group: 18-24<br />Arrest_Count:  103<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:  502<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:  178<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:   29<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: <18<br />Arrest_Count:   12<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(160,32,240,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(160,32,240,1)"}},"hoveron":"points","name":"ASIAN / PACIFIC ISLANDER","legendgroup":"ASIAN / PACIFIC ISLANDER","showlegend":false,"xaxis":"x4","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[66,394,115,14,3],"text":["Age_Group: 18-24<br />Arrest_Count:   66<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:  394<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:  115<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: 55+<br />Arrest_Count:   14<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER","Age_Group: <18<br />Arrest_Count:    3<br />PERP_RACE: ASIAN / PACIFIC ISLANDER<br />PERP_RACE: ASIAN / PACIFIC ISLANDER"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(160,32,240,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(160,32,240,1)"}},"hoveron":"points","name":"ASIAN / PACIFIC ISLANDER","legendgroup":"ASIAN / PACIFIC ISLANDER","showlegend":false,"xaxis":"x5","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[810,2264,689,71,201],"text":["Age_Group: 18-24<br />Arrest_Count:  810<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count: 2264<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:  689<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:   71<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: <18<br />Arrest_Count:  201<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,255,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,255,0,1)"}},"hoveron":"points","name":"BLACK","legendgroup":"BLACK","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[50,363,238,17,3],"text":["Age_Group: 18-24<br />Arrest_Count:   50<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:  363<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:  238<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:   17<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: <18<br />Arrest_Count:    3<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,255,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,255,0,1)"}},"hoveron":"points","name":"BLACK","legendgroup":"BLACK","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[413,1363,418,38,153],"text":["Age_Group: 18-24<br />Arrest_Count:  413<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count: 1363<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:  418<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:   38<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: <18<br />Arrest_Count:  153<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,255,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,255,0,1)"}},"hoveron":"points","name":"BLACK","legendgroup":"BLACK","showlegend":false,"xaxis":"x3","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[144,659,162,12,9],"text":["Age_Group: 18-24<br />Arrest_Count:  144<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:  659<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:  162<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:   12<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: <18<br />Arrest_Count:    9<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,255,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,255,0,1)"}},"hoveron":"points","name":"BLACK","legendgroup":"BLACK","showlegend":false,"xaxis":"x4","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[294,1015,458,43,26],"text":["Age_Group: 18-24<br />Arrest_Count:  294<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count: 1015<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:  458<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:   43<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: <18<br />Arrest_Count:   26<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,255,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,255,0,1)"}},"hoveron":"points","name":"BLACK","legendgroup":"BLACK","showlegend":false,"xaxis":"x5","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[1281,5466,1802,249,269],"text":["Age_Group: 18-24<br />Arrest_Count: 1281<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count: 5466<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count: 1802<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:  249<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: <18<br />Arrest_Count:  269<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,255,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,255,0,1)"}},"hoveron":"points","name":"BLACK","legendgroup":"BLACK","showlegend":false,"xaxis":"x","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[548,2887,1954,209,73],"text":["Age_Group: 18-24<br />Arrest_Count:  548<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count: 2887<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count: 1954<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:  209<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: <18<br />Arrest_Count:   73<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,255,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,255,0,1)"}},"hoveron":"points","name":"BLACK","legendgroup":"BLACK","showlegend":false,"xaxis":"x2","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[813,3518,1018,126,274],"text":["Age_Group: 18-24<br />Arrest_Count:  813<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count: 3518<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count: 1018<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:  126<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: <18<br />Arrest_Count:  274<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,255,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,255,0,1)"}},"hoveron":"points","name":"BLACK","legendgroup":"BLACK","showlegend":false,"xaxis":"x3","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[729,3099,1063,93,61],"text":["Age_Group: 18-24<br />Arrest_Count:  729<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count: 3099<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count: 1063<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:   93<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: <18<br />Arrest_Count:   61<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,255,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,255,0,1)"}},"hoveron":"points","name":"BLACK","legendgroup":"BLACK","showlegend":false,"xaxis":"x4","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[517,3220,2320,185,104],"text":["Age_Group: 18-24<br />Arrest_Count:  517<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count: 3220<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count: 2320<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: 55+<br />Arrest_Count:  185<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK","Age_Group: <18<br />Arrest_Count:  104<br />PERP_RACE: BLACK<br />PERP_RACE: BLACK"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,255,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,255,0,1)"}},"hoveron":"points","name":"BLACK","legendgroup":"BLACK","showlegend":false,"xaxis":"x5","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[149,396,92,5,44],"text":["Age_Group: 18-24<br />Arrest_Count:  149<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:  396<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:   92<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:    5<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: <18<br />Arrest_Count:   44<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,255,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,255,0,1)"}},"hoveron":"points","name":"BLACK HISPANIC","legendgroup":"BLACK HISPANIC","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[6,65,29,4,1],"text":["Age_Group: 18-24<br />Arrest_Count:    6<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:   65<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:   29<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:    4<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: <18<br />Arrest_Count:    1<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,255,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,255,0,1)"}},"hoveron":"points","name":"BLACK HISPANIC","legendgroup":"BLACK HISPANIC","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[91,256,64,5,31],"text":["Age_Group: 18-24<br />Arrest_Count:   91<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:  256<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:   64<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:    5<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: <18<br />Arrest_Count:   31<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,255,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,255,0,1)"}},"hoveron":"points","name":"BLACK HISPANIC","legendgroup":"BLACK HISPANIC","showlegend":false,"xaxis":"x3","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,3,1],"y":[26,71,15,1],"text":["Age_Group: 18-24<br />Arrest_Count:   26<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:   71<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:   15<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: <18<br />Arrest_Count:    1<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,255,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,255,0,1)"}},"hoveron":"points","name":"BLACK HISPANIC","legendgroup":"BLACK HISPANIC","showlegend":false,"xaxis":"x4","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[79,306,62,3,6],"text":["Age_Group: 18-24<br />Arrest_Count:   79<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:  306<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:   62<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:    3<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: <18<br />Arrest_Count:    6<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,255,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,255,0,1)"}},"hoveron":"points","name":"BLACK HISPANIC","legendgroup":"BLACK HISPANIC","showlegend":false,"xaxis":"x5","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[297,1258,304,31,69],"text":["Age_Group: 18-24<br />Arrest_Count:  297<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count: 1258<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:  304<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:   31<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: <18<br />Arrest_Count:   69<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,255,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,255,0,1)"}},"hoveron":"points","name":"BLACK HISPANIC","legendgroup":"BLACK HISPANIC","showlegend":false,"xaxis":"x","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[184,717,326,38,13],"text":["Age_Group: 18-24<br />Arrest_Count:  184<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:  717<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:  326<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:   38<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: <18<br />Arrest_Count:   13<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,255,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,255,0,1)"}},"hoveron":"points","name":"BLACK HISPANIC","legendgroup":"BLACK HISPANIC","showlegend":false,"xaxis":"x2","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[218,783,169,26,61],"text":["Age_Group: 18-24<br />Arrest_Count:  218<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:  783<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:  169<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:   26<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: <18<br />Arrest_Count:   61<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,255,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,255,0,1)"}},"hoveron":"points","name":"BLACK HISPANIC","legendgroup":"BLACK HISPANIC","showlegend":false,"xaxis":"x3","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[199,634,106,5,18],"text":["Age_Group: 18-24<br />Arrest_Count:  199<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:  634<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:  106<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:    5<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: <18<br />Arrest_Count:   18<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,255,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,255,0,1)"}},"hoveron":"points","name":"BLACK HISPANIC","legendgroup":"BLACK HISPANIC","showlegend":false,"xaxis":"x4","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[248,716,343,18,10],"text":["Age_Group: 18-24<br />Arrest_Count:  248<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:  716<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:  343<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: 55+<br />Arrest_Count:   18<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC","Age_Group: <18<br />Arrest_Count:   10<br />PERP_RACE: BLACK HISPANIC<br />PERP_RACE: BLACK HISPANIC"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,255,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,255,0,1)"}},"hoveron":"points","name":"BLACK HISPANIC","legendgroup":"BLACK HISPANIC","showlegend":false,"xaxis":"x5","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[3,21,3,1,1],"text":["Age_Group: 18-24<br />Arrest_Count:    3<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 55+<br />Arrest_Count:   21<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 55+<br />Arrest_Count:    3<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 55+<br />Arrest_Count:    1<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: <18<br />Arrest_Count:    1<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(190,190,190,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(190,190,190,1)"}},"hoveron":"points","name":"UNKNOWN","legendgroup":"UNKNOWN","showlegend":false,"xaxis":"x2","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,1],"y":[8,21,12,2],"text":["Age_Group: 18-24<br />Arrest_Count:    8<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 55+<br />Arrest_Count:   21<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 55+<br />Arrest_Count:   12<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: <18<br />Arrest_Count:    2<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(190,190,190,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(190,190,190,1)"}},"hoveron":"points","name":"UNKNOWN","legendgroup":"UNKNOWN","showlegend":false,"xaxis":"x3","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[8,26,24,2,1],"text":["Age_Group: 18-24<br />Arrest_Count:    8<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 55+<br />Arrest_Count:   26<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 55+<br />Arrest_Count:   24<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: 55+<br />Arrest_Count:    2<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN","Age_Group: <18<br />Arrest_Count:    1<br />PERP_RACE: UNKNOWN<br />PERP_RACE: UNKNOWN"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(190,190,190,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(190,190,190,1)"}},"hoveron":"points","name":"UNKNOWN","legendgroup":"UNKNOWN","showlegend":false,"xaxis":"x5","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[75,304,136,19,14],"text":["Age_Group: 18-24<br />Arrest_Count:   75<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  304<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  136<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:   19<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: <18<br />Arrest_Count:   14<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,0,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,0,0,1)"}},"hoveron":"points","name":"WHITE","legendgroup":"WHITE","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[25,375,105,2,2],"text":["Age_Group: 18-24<br />Arrest_Count:   25<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  375<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  105<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:    2<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: <18<br />Arrest_Count:    2<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,0,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,0,0,1)"}},"hoveron":"points","name":"WHITE","legendgroup":"WHITE","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[34,198,94,16,8],"text":["Age_Group: 18-24<br />Arrest_Count:   34<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  198<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:   94<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:   16<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: <18<br />Arrest_Count:    8<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,0,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,0,0,1)"}},"hoveron":"points","name":"WHITE","legendgroup":"WHITE","showlegend":false,"xaxis":"x3","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[93,634,289,35,2],"text":["Age_Group: 18-24<br />Arrest_Count:   93<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  634<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  289<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:   35<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: <18<br />Arrest_Count:    2<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,0,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,0,0,1)"}},"hoveron":"points","name":"WHITE","legendgroup":"WHITE","showlegend":false,"xaxis":"x5","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[184,1028,594,134,32],"text":["Age_Group: 18-24<br />Arrest_Count:  184<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count: 1028<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  594<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  134<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: <18<br />Arrest_Count:   32<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,0,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,0,0,1)"}},"hoveron":"points","name":"WHITE","legendgroup":"WHITE","showlegend":false,"xaxis":"x","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[55,842,388,25,5],"text":["Age_Group: 18-24<br />Arrest_Count:   55<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  842<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  388<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:   25<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: <18<br />Arrest_Count:    5<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,0,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,0,0,1)"}},"hoveron":"points","name":"WHITE","legendgroup":"WHITE","showlegend":false,"xaxis":"x2","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[98,519,284,50,31],"text":["Age_Group: 18-24<br />Arrest_Count:   98<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  519<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  284<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:   50<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: <18<br />Arrest_Count:   31<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,0,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,0,0,1)"}},"hoveron":"points","name":"WHITE","legendgroup":"WHITE","showlegend":false,"xaxis":"x3","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[80,649,438,60,8],"text":["Age_Group: 18-24<br />Arrest_Count:   80<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  649<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  438<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:   60<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: <18<br />Arrest_Count:    8<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,0,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,0,0,1)"}},"hoveron":"points","name":"WHITE","legendgroup":"WHITE","showlegend":false,"xaxis":"x4","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[91,1388,634,64,5],"text":["Age_Group: 18-24<br />Arrest_Count:   91<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count: 1388<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:  634<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: 55+<br />Arrest_Count:   64<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE","Age_Group: <18<br />Arrest_Count:    5<br />PERP_RACE: WHITE<br />PERP_RACE: WHITE"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,0,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,0,0,1)"}},"hoveron":"points","name":"WHITE","legendgroup":"WHITE","showlegend":false,"xaxis":"x5","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[488,1412,302,15,97],"text":["Age_Group: 18-24<br />Arrest_Count:  488<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count: 1412<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:  302<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:   15<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: <18<br />Arrest_Count:   97<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,165,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,165,0,1)"}},"hoveron":"points","name":"WHITE HISPANIC","legendgroup":"WHITE HISPANIC","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[31,243,118,2,2],"text":["Age_Group: 18-24<br />Arrest_Count:   31<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:  243<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:  118<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:    2<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: <18<br />Arrest_Count:    2<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,165,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,165,0,1)"}},"hoveron":"points","name":"WHITE HISPANIC","legendgroup":"WHITE HISPANIC","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[215,794,193,18,74],"text":["Age_Group: 18-24<br />Arrest_Count:  215<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:  794<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:  193<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:   18<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: <18<br />Arrest_Count:   74<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,165,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,165,0,1)"}},"hoveron":"points","name":"WHITE HISPANIC","legendgroup":"WHITE HISPANIC","showlegend":false,"xaxis":"x3","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[45,252,48,9,7],"text":["Age_Group: 18-24<br />Arrest_Count:   45<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:  252<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:   48<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:    9<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: <18<br />Arrest_Count:    7<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,165,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,165,0,1)"}},"hoveron":"points","name":"WHITE HISPANIC","legendgroup":"WHITE HISPANIC","showlegend":false,"xaxis":"x4","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[296,836,255,27,9],"text":["Age_Group: 18-24<br />Arrest_Count:  296<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:  836<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:  255<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:   27<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: <18<br />Arrest_Count:    9<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,165,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,165,0,1)"}},"hoveron":"points","name":"WHITE HISPANIC","legendgroup":"WHITE HISPANIC","showlegend":false,"xaxis":"x5","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[1040,3808,958,94,128],"text":["Age_Group: 18-24<br />Arrest_Count: 1040<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count: 3808<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:  958<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:   94<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: <18<br />Arrest_Count:  128<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,165,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,165,0,1)"}},"hoveron":"points","name":"WHITE HISPANIC","legendgroup":"WHITE HISPANIC","showlegend":false,"xaxis":"x","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[328,1734,921,65,21],"text":["Age_Group: 18-24<br />Arrest_Count:  328<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count: 1734<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:  921<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:   65<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: <18<br />Arrest_Count:   21<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,165,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,165,0,1)"}},"hoveron":"points","name":"WHITE HISPANIC","legendgroup":"WHITE HISPANIC","showlegend":false,"xaxis":"x2","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[594,2106,498,51,166],"text":["Age_Group: 18-24<br />Arrest_Count:  594<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count: 2106<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:  498<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:   51<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: <18<br />Arrest_Count:  166<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,165,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,165,0,1)"}},"hoveron":"points","name":"WHITE HISPANIC","legendgroup":"WHITE HISPANIC","showlegend":false,"xaxis":"x3","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[414,1595,416,37,42],"text":["Age_Group: 18-24<br />Arrest_Count:  414<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count: 1595<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:  416<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:   37<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: <18<br />Arrest_Count:   42<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,165,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,165,0,1)"}},"hoveron":"points","name":"WHITE HISPANIC","legendgroup":"WHITE HISPANIC","showlegend":false,"xaxis":"x4","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[2,3,3,3,1],"y":[783,2492,945,42,18],"text":["Age_Group: 18-24<br />Arrest_Count:  783<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count: 2492<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:  945<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: 55+<br />Arrest_Count:   42<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC","Age_Group: <18<br />Arrest_Count:   18<br />PERP_RACE: WHITE HISPANIC<br />PERP_RACE: WHITE HISPANIC"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,165,0,1)","opacity":1,"size":7.559055118110237,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,165,0,1)"}},"hoveron":"points","name":"WHITE HISPANIC","legendgroup":"WHITE HISPANIC","showlegend":false,"xaxis":"x5","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[3],"y":[5466],"text":"Peak Arrest Rate","hovertext":"x: 3<br />y: 5466","textfont":{"size":15.118110236220474,"color":"rgba(255,165,0,1)"},"type":"scatter","mode":"text","hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3],"y":[5466],"text":"Peak Arrest Rate","hovertext":"x: 3<br />y: 5466","textfont":{"size":15.118110236220474,"color":"rgba(255,165,0,1)"},"type":"scatter","mode":"text","hoveron":"points","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3],"y":[5466],"text":"Peak Arrest Rate","hovertext":"x: 3<br />y: 5466","textfont":{"size":15.118110236220474,"color":"rgba(255,165,0,1)"},"type":"scatter","mode":"text","hoveron":"points","showlegend":false,"xaxis":"x3","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3],"y":[5466],"text":"Peak Arrest Rate","hovertext":"x: 3<br />y: 5466","textfont":{"size":15.118110236220474,"color":"rgba(255,165,0,1)"},"type":"scatter","mode":"text","hoveron":"points","showlegend":false,"xaxis":"x4","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3],"y":[5466],"text":"Peak Arrest Rate","hovertext":"x: 3<br />y: 5466","textfont":{"size":15.118110236220474,"color":"rgba(255,165,0,1)"},"type":"scatter","mode":"text","hoveron":"points","showlegend":false,"xaxis":"x5","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3],"y":[5466],"text":"Peak Arrest Rate","hovertext":"x: 3<br />y: 5466","textfont":{"size":15.118110236220474,"color":"rgba(255,165,0,1)"},"type":"scatter","mode":"text","hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[3],"y":[5466],"text":"Peak Arrest Rate","hovertext":"x: 3<br />y: 5466","textfont":{"size":15.118110236220474,"color":"rgba(255,165,0,1)"},"type":"scatter","mode":"text","hoveron":"points","showlegend":false,"xaxis":"x2","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[3],"y":[5466],"text":"Peak Arrest Rate","hovertext":"x: 3<br />y: 5466","textfont":{"size":15.118110236220474,"color":"rgba(255,165,0,1)"},"type":"scatter","mode":"text","hoveron":"points","showlegend":false,"xaxis":"x3","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[3],"y":[5466],"text":"Peak Arrest Rate","hovertext":"x: 3<br />y: 5466","textfont":{"size":15.118110236220474,"color":"rgba(255,165,0,1)"},"type":"scatter","mode":"text","hoveron":"points","showlegend":false,"xaxis":"x4","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[3],"y":[5466],"text":"Peak Arrest Rate","hovertext":"x: 3<br />y: 5466","textfont":{"size":15.118110236220474,"color":"rgba(255,165,0,1)"},"type":"scatter","mode":"text","hoveron":"points","showlegend":false,"xaxis":"x5","yaxis":"y2","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":67.274387712743874,"r":25.238688252386886,"b":57.307888385132827,"l":62.299709422997111},"font":{"color":"rgba(0,0,0,1)","family":"","size":18.596928185969279},"title":{"text":"Rate of Arrests per 1,000 Individuals by Age Group, Race, Gender, and Offense Type","font":{"color":"rgba(0,0,0,1)","family":"","size":22.316313823163139},"x":0,"xref":"paper"},"xaxis":{"domain":[0,0.18616299986163001],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,3.6000000000000001],"tickmode":"array","ticktext":["<18","18-24","55+"],"tickvals":[1,2,3],"categoryorder":"array","categoryarray":["<18","18-24","55+"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":4.6492320464923198,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":14.877542548775427},"tickangle":-45,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.8453149175440583,"zeroline":false,"anchor":"y2","title":"","hoverformat":".2f"},"annotations":[{"text":"Age Group","x":0.5,"y":0,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":18.596928185969279},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"top","annotationType":"axis","yshift":-34.061728152671229},{"text":"Arrest Count","x":0,"y":0.5,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":18.596928185969279},"xref":"paper","yref":"paper","textangle":-90,"xanchor":"right","yanchor":"center","annotationType":"axis","xshift":-42.772934827729365},{"text":"ASSAULT 3 & RELATED OFFENSES","x":0.093081499930815007,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":15.940224159402241},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"DANGEROUS DRUGS","x":0.29999999999999999,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":15.940224159402241},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"FELONY ASSAULT","x":0.50000000000000011,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":15.940224159402241},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"MISCELLANEOUS PENAL LAW","x":0.70000000000000007,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":15.940224159402241},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"PETIT LARCENY","x":0.90691850006918506,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":15.940224159402241},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"F","x":1,"y":0.75968590009685899,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":15.940224159402241},"xref":"paper","yref":"paper","textangle":90,"xanchor":"left","yanchor":"middle"},{"text":"M","x":1,"y":0.24031409990314101,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":15.940224159402241},"xref":"paper","yref":"paper","textangle":90,"xanchor":"left","yanchor":"middle"}],"yaxis":{"domain":[0.51937180019371798,1],"automargin":true,"type":"linear","autorange":false,"range":[-272.25,5739.25],"tickmode":"array","ticktext":["0","2000","4000"],"tickvals":[0,2000,4000],"categoryorder":"array","categoryarray":["0","2000","4000"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":4.6492320464923216,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":14.87754254877543},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.8453149175440583,"zeroline":false,"anchor":"x","title":"","hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":0.18616299986163001,"y0":0.51937180019371798,"y1":1},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":0.18616299986163001,"y0":0,"y1":30.817766708177672,"yanchor":1,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.21383700013837001,"x1":0.38616299986163,"y0":0.51937180019371798,"y1":1},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.21383700013837001,"x1":0.38616299986163,"y0":0,"y1":30.817766708177672,"yanchor":1,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.41383700013837005,"x1":0.58616299986163012,"y0":0.51937180019371798,"y1":1},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.41383700013837005,"x1":0.58616299986163012,"y0":0,"y1":30.817766708177672,"yanchor":1,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.61383700013837006,"x1":0.78616299986163007,"y0":0.51937180019371798,"y1":1},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.61383700013837006,"x1":0.78616299986163007,"y0":0,"y1":30.817766708177672,"yanchor":1,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.81383700013837001,"x1":1,"y0":0.51937180019371798,"y1":1},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.81383700013837001,"x1":1,"y0":0,"y1":30.817766708177672,"yanchor":1,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","y0":0.51937180019371798,"y1":1,"x0":0,"x1":30.817766708177672,"xanchor":1,"xsizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":0.18616299986163001,"y0":0,"y1":0.48062819980628202},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.21383700013837001,"x1":0.38616299986163,"y0":0,"y1":0.48062819980628202},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.41383700013837005,"x1":0.58616299986163012,"y0":0,"y1":0.48062819980628202},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.61383700013837006,"x1":0.78616299986163007,"y0":0,"y1":0.48062819980628202},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.81383700013837001,"x1":1,"y0":0,"y1":0.48062819980628202},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","y0":0,"y1":0.48062819980628202,"x0":0,"x1":30.817766708177672,"xanchor":1,"xsizemode":"pixel"}],"xaxis2":{"type":"linear","autorange":false,"range":[0.40000000000000002,3.6000000000000001],"tickmode":"array","ticktext":["<18","18-24","55+"],"tickvals":[1,2,3],"categoryorder":"array","categoryarray":["<18","18-24","55+"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":4.6492320464923198,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":14.877542548775427},"tickangle":-45,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0.21383700013837001,0.38616299986163],"gridcolor":"rgba(235,235,235,1)","gridwidth":0.8453149175440583,"zeroline":false,"anchor":"y2","title":"","hoverformat":".2f"},"xaxis3":{"type":"linear","autorange":false,"range":[0.40000000000000002,3.6000000000000001],"tickmode":"array","ticktext":["<18","18-24","55+"],"tickvals":[1,2,3],"categoryorder":"array","categoryarray":["<18","18-24","55+"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":4.6492320464923198,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":14.877542548775427},"tickangle":-45,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0.41383700013837005,0.58616299986163012],"gridcolor":"rgba(235,235,235,1)","gridwidth":0.8453149175440583,"zeroline":false,"anchor":"y2","title":"","hoverformat":".2f"},"xaxis4":{"type":"linear","autorange":false,"range":[0.40000000000000002,3.6000000000000001],"tickmode":"array","ticktext":["<18","18-24","55+"],"tickvals":[1,2,3],"categoryorder":"array","categoryarray":["<18","18-24","55+"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":4.6492320464923198,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":14.877542548775427},"tickangle":-45,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0.61383700013837006,0.78616299986163007],"gridcolor":"rgba(235,235,235,1)","gridwidth":0.8453149175440583,"zeroline":false,"anchor":"y2","title":"","hoverformat":".2f"},"xaxis5":{"type":"linear","autorange":false,"range":[0.40000000000000002,3.6000000000000001],"tickmode":"array","ticktext":["<18","18-24","55+"],"tickvals":[1,2,3],"categoryorder":"array","categoryarray":["<18","18-24","55+"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":4.6492320464923198,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":14.877542548775427},"tickangle":-45,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0.81383700013837001,1],"gridcolor":"rgba(235,235,235,1)","gridwidth":0.8453149175440583,"zeroline":false,"anchor":"y2","title":"","hoverformat":".2f"},"yaxis2":{"type":"linear","autorange":false,"range":[-272.25,5739.25],"tickmode":"array","ticktext":["0","2000","4000"],"tickvals":[0,2000,4000],"categoryorder":"array","categoryarray":["0","2000","4000"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":4.6492320464923216,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":14.87754254877543},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0,0.48062819980628202],"gridcolor":"rgba(235,235,235,1)","gridwidth":0.8453149175440583,"zeroline":false,"anchor":"x","title":"","hoverformat":".2f"},"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":14.877542548775427},"title":{"text":"Race/Ethnicity","font":{"color":"rgba(0,0,0,1)","family":"","size":18.596928185969279}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"7a4127f4dbd3":{"x":{},"y":{},"colour":{},"type":"scatter"},"7a413c8c0e23":{"x":{},"y":{},"colour":{}},"7a41ef43ae3":{"x":{},"y":{}}},"cur_data":"7a4127f4dbd3","visdat":{"7a4127f4dbd3":["function (y) ","x"],"7a413c8c0e23":["function (y) ","x"],"7a41ef43ae3":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
