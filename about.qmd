@@ -1,0 +1,69 @@
+---
+title: "CODE"
+---
+
+## About code for research question1
+
+```{r}
+# Set CRAN mirror
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+```
+
+```{r}
+#1
+
+# Load necessary libraries
+library(dplyr)
+library(sf)
+library(tmap)
+
+# Step 1: Load NYC Borough Shapefile
+shapefile_path <- "/Users/sandhyakanduri/Desktop/semester 1/ STAT515/final project stat/Borough Boundaries/geo_export_f2f491f7-6347-4598-ad2d-bb86e06c477c.shp"
+nyc_boroughs <- st_read(shapefile_path)
+
+# Step 2: Load Arrest Data
+file_path <- "/Users/sandhyakanduri/Desktop/semester 1/ STAT515/final project stat/Cleaned_NYPD_Arrest_Data_With_Standardized_Date.csv"
+data <- read.csv(file_path)
+
+# Step 3: Map Borough Codes to Full Names
+borough_mapping <- c(
+  "Q" = "Queens",
+  "B" = "Bronx",
+  "S" = "Staten Island",
+  "M" = "Manhattan",
+  "K" = "Brooklyn"
+)
+data <- data %>%
+  mutate(ARREST_BORO_NAME = borough_mapping[ARREST_BORO])
+
+# Step 4: Aggregate Arrest Counts by Borough
+borough_counts <- data %>%
+  group_by(ARREST_BORO_NAME) %>%
+  summarise(Arrest_Count = n())
+
+# Step 5: Prepare Shapefile for Merge
+nyc_boroughs <- nyc_boroughs %>%
+  mutate(borough = trimws(boro_name))
+
+# Step 6: Merge Arrest Data with Shapefile
+nyc_boroughs <- nyc_boroughs %>%
+  left_join(borough_counts, by = c("borough" = "ARREST_BORO_NAME"))
+
+# Step 7: Create Choropleth Map with Borough Names
+tm_shape(nyc_boroughs) +
+  tm_polygons(
+    col = "Arrest_Count",
+    palette = "Blues",
+    title = "Arrest Counts",
+    style = "quantile"
+  ) +
+  tm_text(
+    "borough",  # Display borough names
+    size = 0.8,  # Adjust text size
+    col = "black"  # Text color
+  ) +
+  tm_layout(
+    title = "NYC Arrests by Borough",
+    legend.outside = TRUE
+  )
+```
